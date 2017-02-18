@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tfiwm/jsdoc-webpack-plugin.git"
+    "url": "git+https://github.com/mandersonwv/jsdoc-webpack-plugin.git"
   },
   "keywords": [
     "jsdoc",
@@ -17,9 +17,9 @@
   "author": "Mitko Tschimev <net.mitko.tschimev@mhp.com> (http://www.mitko-tschimev.de)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tfiwm/jsdoc-webpack-plugin/issues"
+    "url": "https://github.com/mandersonwv/jsdoc-webpack-plugin/issues"
   },
-  "homepage": "https://github.com/tfiwm/jsdoc-webpack-plugin#readme",
+  "homepage": "https://github.com/mandersonwv/jsdoc-webpack-plugin#readme",
   "dependencies": {
     "fs-extra": "^0.30.0",
     "jsdoc": "^3.4.0",

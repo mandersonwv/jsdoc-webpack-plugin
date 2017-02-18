@@ -50,11 +50,15 @@ Plugin.prototype.apply = function (compiler) {
 
       var jsDocConfTmp = path.resolve(cwd, 'jsdoc.' + Date.now() + '.conf.tmp');
       fs.writeFileSync(jsDocConfTmp, JSON.stringify(obj));
+      console.log('jsDocConfTmp', jsDocConfTmp);
 
-        if(/^win/.test(process.platform))
-            jsdoc = spawn(__dirname + '/node_modules/.bin/jsdoc.cmd', ['-c', jsDocConfTmp]);
-        else
-            jsdoc = spawn(__dirname + '/node_modules/.bin/jsdoc', ['-c', jsDocConfTmp]);
+      jsdoc = spawn('jsdoc', ['-c', jsDocConfTmp]).on('error', function(err) {
+        var loop = 0;
+        while(loop < 10) {
+          loop++;
+          console.log('JSDoc not found! run `npm install -g jsdoc` to install JSDoc globally or include it with the project!');
+        }
+      });
 
       jsdoc.stdout.on('data', function (data) {
         console.log(data.toString());
