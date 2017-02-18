@@ -50,7 +50,6 @@ Plugin.prototype.apply = function (compiler) {
 
       var jsDocConfTmp = path.resolve(cwd, 'jsdoc.' + Date.now() + '.conf.tmp');
       fs.writeFileSync(jsDocConfTmp, JSON.stringify(obj));
-      console.log('jsDocConfTmp', jsDocConfTmp);
 
       jsdoc = spawn('jsdoc', ['-c', jsDocConfTmp]).on('error', function(err) {
         var loop = 0;
